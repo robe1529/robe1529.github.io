@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="XKCD.css">
+        <script src="XKCD.js"></script>
+        <title>XKCD Password SPA</title>
+    </head>
+    <body>
+        <div class="mainbox">
+            <div id="title">XKCD Password Generator</div>
+                <div id="entry_1">
+                    <label for="pw_maxlength">Maximum Password Length:</label>
+                    <input type="text" value="16" id="pw_maxlength" onchange="updateInputBox(this)">
+                    <input type="range" min="4" max="26" value="16" id="pw_maxlength_slider" oninput="updateSlider(this)">
+                </div>
+                <div id="entry_2">
+                    <label for="word_minlength">Minimum Word Length:</label>
+                    <input type="text" value="4" id="word_minlength" onchange="updateInputBox(this)">
+                    <input type="range" min="2" max="14" value="4" id="word_minlength_slider" oninput="updateSlider(this)">
+                </div>
+                <div id="entry_3">
+                    <label for="word_maxlength">Maximum Word Length:</label>
+                    <input type="text" value = "8" id="word_maxlength" onchange="updateInputBox(this)">
+                    <input type="range" min="2" max="14" value="8" id="word_maxlength_slider" oninput="updateSlider(this)">
+                </div>
+                <div>
+                    <input type="checkbox" name="subnums" value="subnums" onchange="checkBox(this)">Substitute Numbers for Letters (1->l/L, 3->e/E)</option>
+                    <div class="break"></div>
+                    <input type="checkbox" name="dblletters" value="dblletters" onchange="checkBox(this)">Prefer Words with Double Letters</option>
+                    <div class="break"></div>
+                    <input type="checkbox" name="althands" value="althands" onchange="checkBox(this)">Prefer Words with Letters that Alternate Typing Hands</option>
+                </div>
+                <div>
+                    <button onclick="generatePassword()">Generate</button>
+                </div>
+            </div>
+        </div>
+        <div class="results">
+            <p>
+                <table id="resultsTable"></table>
+            </p>
+        </div>
+    </body>
+</html>

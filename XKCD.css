@@ -1,0 +1,42 @@
+
+.mainbox {
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: cursive;
+    background-color: beige;
+}
+
+.results {
+    width: 100%;
+    margin: auto;
+    
+}
+
+input {
+    width: 2rem;
+}
+
+.break {
+    flex: 0 1 100%;
+}
+
+#pw_maxlength_slider, #word_minlength_slider, #word_maxlength_slider{
+    width: 33%;
+}
+
+table {
+    width: 40%;
+    margin: auto;
+    background-color: beige;
+}
+td {
+    width: 100px;
+}
+
+
+

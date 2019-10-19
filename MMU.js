@@ -5,8 +5,6 @@ var organizations = 'https://api.petfinder.com/v2/organizations/?location=55414'
 var tokenURL = 'https://api.petfinder.com/v2/oauth2/token';
 
 let authorization = {
-    withCredentials: true,
-    credentials: 'include',
     headers: {
         'Authorization': 'Bearer ' + token,
     } 

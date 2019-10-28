@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Dog Finder</title>
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        
+    </head>
+    <style>
+        .main {
+            margin: auto;
+            justify-content: center;
+        }
+    </style>
+    <body onload="refreshToken(), populateBreedInfo()">
+
+    <div class="container justify-content-center">
+        <div class="jumbotron">
+            <h2> Find-a-Dog</h2>
+            <p> Enter a US ZIP code and a search radius below, and find a dog looking to be adopted!</p>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------------------- Search Fields ------------------------------------------------------------------------>
+    <div class="d-flex justify-content-center searchContainer">
+        <div class="d-inline-flex searchOption">
+            <label for="zipCode" class="searchLabel">ZIP Code: </label>
+            <input type="text" id="zipCode" placeholder="e.g. 55414">
+        </div>
+        <div class="d-inline-flex searchOption">
+            <label for="distance" class="searchLabel">Within Distance: </label>
+            <input type="text" id="distance" placeholder="10 (miles)">
+        </div>
+        <div class="d-flex">
+            <button class="btn btn-primary" type="button" onclick="verifySearch()">Search!</button>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------- End Search Fields ---------------------------------------------------------------------->
+
+
+        <!----------------------------------------------------------------- Filter Options ---------------------------------------------------------------------------->
+        <div class="collapse" id="filterContainer">
+            <div class="d-flex justify-content-center">
+                <div class="d-inline-flex searchResult">
+                    <div class="dropdown scrollable resultOption">
+                        <label for="breedBtn">Breed: </label>
+                        <select class="btn btn-secondary selectpicker dropdown-toggle" scrollable" id="selectBreed" aria-labelledby="dropdownMenuButton">
+                            <option value="0">Any</option>
+                        </select>
+                    </div>
+                    <div class="dropdown resultOption">
+                        <label for="selectGender">Gender: </label>
+                        <select class="btn btn-secondary selectpicker dropdown-toggle" id="selectGender">
+                            <option value="0">Any</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                    </div>
+                    <div class="dropdown resultOption">
+                        <label for="selectAge">Age: </label>
+                        <select class="btn btn-secondary selectpicker dropdown-toggle" id="selectAge">
+                            <option value="0">Any</option>
+                            <option value="1">Baby</option>
+                            <option value="2">Young</option>
+                            <option value="3">Adult</option>
+                        </select>
+                    </div>
+                    <div class="resultOption">
+                        <button class="btn btn-primary" type="button" onclick="filterResults()">Filter Results</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------------------- End Filter Results ------------------------------------------------------------------------>
+        
+            <div id="searchResults">
+                
+            </div>
+
+        <!------------------------------------------------- Animal Details Form ----------------------------------------------------->
+        
+        <!----------------------------------------------- End Animal Details Form --------------------------------------------------->
+        
+
+        <!-- Jquery, Popper, Bootstrap, & API JS -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/api.js"></script>
+
+    </body>
+</html>
